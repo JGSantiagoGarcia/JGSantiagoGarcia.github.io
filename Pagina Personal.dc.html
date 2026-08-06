@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: oklch(0.975 0.006 85); color: oklch(0.23 0.012 260); font-family: "Source Serif 4", Georgia, serif; -webkit-font-smoothing: antialiased; }
+  a { color: oklch(0.45 0.062 240); text-decoration-color: oklch(0.78 0.03 240); text-underline-offset: 3px; }
+  a:hover { color: oklch(0.34 0.075 240); }
+  ::selection { background: oklch(0.88 0.055 240); }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="max-width: 1180px; margin: 0 auto; padding: 0 28px 120px">
+
+  <nav style="position: sticky; top: 0; z-index: 20; display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 20px 0 16px; background: oklch(0.975 0.006 85 / 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid oklch(0.88 0.01 85); flex-wrap: wrap">
+    <a href="#top" style="font-size: 17px; letter-spacing: 0.01em; text-decoration: none; color: oklch(0.23 0.012 260); font-weight: 600">Tu Nombre Apellido</a>
+    <div style="display: flex; align-items: baseline; gap: 22px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase">
+      <a href="#investigacion" style="text-decoration: none; white-space: nowrap"><span hidden="{{ esHidden }}">Investigación</span><span hidden="{{ enHidden }}">Research</span></a>
+      <a href="#publicaciones" style="text-decoration: none; white-space: nowrap"><span hidden="{{ esHidden }}">Publicaciones</span><span hidden="{{ enHidden }}">Publications</span></a>
+      <a href="#notas" style="text-decoration: none; white-space: nowrap"><span hidden="{{ esHidden }}">Notas</span><span hidden="{{ enHidden }}">Notes</span></a>
+      <a href="#cv" style="text-decoration: none; white-space: nowrap">CV</a>
+      <a href="#contacto" style="text-decoration: none; white-space: nowrap"><span hidden="{{ esHidden }}">Contacto</span><span hidden="{{ enHidden }}">Contact</span></a>
+      <button onClick="{{ toggleLang }}" style="font-family: inherit; font-size: 12px; letter-spacing: 0.06em; padding: 5px 10px; border: 1px solid oklch(0.8 0.02 240); border-radius: 999px; background: transparent; color: oklch(0.45 0.062 240); cursor: pointer">{{ langLabel }}</button>
+    </div>
+  </nav>
+
+  <header id="top" style="display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 56px; align-items: end; padding: 76px 0 64px; border-bottom: 1px solid oklch(0.88 0.01 85)">
+    <div data-reveal="1">
+      <p style="margin: 0 0 18px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Investigador · Universidad / Instituto</span><span hidden="{{ enHidden }}">Researcher · University / Institute</span></p>
+      <h1 style="margin: 0 0 22px; font-size: clamp(40px, 6.2vw, 66px); line-height: 1.02; font-weight: 400; letter-spacing: -0.02em; text-wrap: balance">Tu Nombre Apellido</h1>
+      <div hidden="{{ esHidden }}">
+        <p style="margin: 0 0 14px; font-size: 21px; line-height: 1.55; max-width: 52ch; color: oklch(0.32 0.014 260); text-wrap: pretty">Estudio <em>tu área de investigación</em> — cómo los sistemas complejos organizan información y qué podemos aprender de ellos con métodos computacionales.</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 54ch; color: oklch(0.44 0.014 260); text-wrap: pretty">Doctorando / Investigador en el grupo de <a href="#">Nombre del grupo</a>. Antes: institución previa y otra institución. Escribo aquí sobre lo que leo, aprendo y construyo.</p>
+      </div>
+      <div hidden="{{ enHidden }}">
+        <p style="margin: 0 0 14px; font-size: 21px; line-height: 1.55; max-width: 52ch; color: oklch(0.32 0.014 260); text-wrap: pretty">I study <em>your research area</em> — how complex systems organise information, and what computational methods can teach us about them.</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 54ch; color: oklch(0.44 0.014 260); text-wrap: pretty">PhD candidate / Researcher in the <a href="#">Group name</a> group. Previously: former institution and another institution. I also write here about what I read, learn and build.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 12px; margin-top: 30px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.03em">
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">Google Scholar</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">ORCID</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">GitHub</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">LinkedIn</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">CV (PDF)</a>
+      </div>
+    </div>
+    <div data-reveal="1" style="display: flex; flex-direction: column; gap: 10px">
+      <div style="aspect-ratio: 4 / 5; border: 1px solid oklch(0.86 0.012 85); border-radius: 3px; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260); background: oklch(0.975 0.006 85); padding: 6px 9px"><span hidden="{{ esHidden }}">retrato / foto</span><span hidden="{{ enHidden }}">portrait / photo</span></span></div>
+      <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.55 0.01 260)"><span hidden="{{ esHidden }}">Arrastra aquí tu foto</span><span hidden="{{ enHidden }}">Drop your photo here</span></p>
+    </div>
+  </header>
+
+  <section id="investigacion" style="padding: 84px 0 0">
+    <div data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+      <h2 style="margin: 0; position: sticky; top: 84px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Investigación</span><span hidden="{{ enHidden }}">Research</span></h2>
+      <div>
+        <div hidden="{{ esHidden }}"><p style="margin: 0 0 8px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Tres líneas de trabajo, de lo que hago hoy a lo que me trajo hasta aquí.</p></div>
+        <div hidden="{{ enHidden }}"><p style="margin: 0 0 8px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Three lines of work, from what I do today back to what brought me here.</p></div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 64px; margin-top: 56px">
+
+      <article data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 28px; border-top: 1px solid oklch(0.88 0.01 85)">
+        <div>
+          <h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 500; line-height: 1.25; text-wrap: pretty"><span hidden="{{ esHidden }}">Línea de investigación principal</span><span hidden="{{ enHidden }}">Main research line</span></h3>
+          <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.6; letter-spacing: 0.04em; color: oklch(0.52 0.01 260)"><span hidden="{{ esHidden }}">Instituto actual · 2024 —</span><span hidden="{{ enHidden }}">Current institute · 2024 —</span></p>
+        </div>
+        <div>
+          <div hidden="{{ esHidden }}"><p style="margin: 0 0 26px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Describe en dos frases el problema que te interesa, el método que usas y por qué importa. Evita jerga: que un estudiante de grado entienda de qué va.</p></div>
+          <div hidden="{{ enHidden }}"><p style="margin: 0 0 26px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Two sentences on the problem you care about, the method you use, and why it matters. Keep it jargon-free: an undergraduate should follow it.</p></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+            <div style="border: 1px solid oklch(0.88 0.01 85); border-radius: 4px; overflow: hidden; background: oklch(0.99 0.004 85)">
+              <div style="aspect-ratio: 16 / 9; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260)"><span hidden="{{ esHidden }}">figura del proyecto</span><span hidden="{{ enHidden }}">project figure</span></span></div>
+              <div style="padding: 16px 18px 18px">
+                <h4 style="margin: 0 0 7px; font-size: 17px; font-weight: 600; line-height: 1.3"><span hidden="{{ esHidden }}">Nombre del proyecto</span><span hidden="{{ enHidden }}">Project name</span></h4>
+                <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: oklch(0.42 0.014 260); text-wrap: pretty"><span hidden="{{ esHidden }}">Una o dos frases sobre qué construiste o descubriste y con qué resultado.</span><span hidden="{{ enHidden }}">One or two sentences on what you built or found, and the result.</span></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px"><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">arXiv</a><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px"><span hidden="{{ esHidden }}">Código</span><span hidden="{{ enHidden }}">Code</span></a><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px"><span hidden="{{ esHidden }}">Charla</span><span hidden="{{ enHidden }}">Talk</span></a></div>
+              </div>
+            </div>
+            <div style="border: 1px solid oklch(0.88 0.01 85); border-radius: 4px; overflow: hidden; background: oklch(0.99 0.004 85)">
+              <div style="aspect-ratio: 16 / 9; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260)"><span hidden="{{ esHidden }}">figura del proyecto</span><span hidden="{{ enHidden }}">project figure</span></span></div>
+              <div style="padding: 16px 18px 18px">
+                <h4 style="margin: 0 0 7px; font-size: 17px; font-weight: 600; line-height: 1.3"><span hidden="{{ esHidden }}">Segundo proyecto</span><span hidden="{{ enHidden }}">Second project</span></h4>
+                <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: oklch(0.42 0.014 260); text-wrap: pretty"><span hidden="{{ esHidden }}">Otra contribución de la misma línea: método, dataset, herramienta o resultado.</span><span hidden="{{ enHidden }}">Another contribution from the same line: a method, dataset, tool or result.</span></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px"><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">arXiv</a><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">DOI</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 28px; border-top: 1px solid oklch(0.88 0.01 85)">
+        <div>
+          <h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 500; line-height: 1.25; text-wrap: pretty"><span hidden="{{ esHidden }}">Segunda línea de trabajo</span><span hidden="{{ enHidden }}">Second line of work</span></h3>
+          <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.6; letter-spacing: 0.04em; color: oklch(0.52 0.01 260)"><span hidden="{{ esHidden }}">Institución previa · 2021 — 2024</span><span hidden="{{ enHidden }}">Previous institution · 2021 — 2024</span></p>
+        </div>
+        <div>
+          <div hidden="{{ esHidden }}"><p style="margin: 0 0 26px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Qué hiciste en esa etapa, con quién colaboraste y qué aprendiste que sigue presente en tu trabajo actual.</p></div>
+          <div hidden="{{ enHidden }}"><p style="margin: 0 0 26px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">What you did in that period, who you collaborated with, and what carried over into your current work.</p></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+            <div style="border: 1px solid oklch(0.88 0.01 85); border-radius: 4px; overflow: hidden; background: oklch(0.99 0.004 85)">
+              <div style="aspect-ratio: 16 / 9; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260)"><span hidden="{{ esHidden }}">figura del proyecto</span><span hidden="{{ enHidden }}">project figure</span></span></div>
+              <div style="padding: 16px 18px 18px">
+                <h4 style="margin: 0 0 7px; font-size: 17px; font-weight: 600; line-height: 1.3"><span hidden="{{ esHidden }}">Proyecto destacado</span><span hidden="{{ enHidden }}">Highlighted project</span></h4>
+                <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: oklch(0.42 0.014 260); text-wrap: pretty"><span hidden="{{ esHidden }}">Si un trabajo tuvo portada, premio o mención especial, dilo aquí en una línea.</span><span hidden="{{ enHidden }}">If a paper got a cover, prize or special mention, say it here in one line.</span></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px"><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px"><span hidden="{{ esHidden }}">Revista</span><span hidden="{{ enHidden }}">Journal</span></a><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">arXiv</a></div>
+              </div>
+            </div>
+            <div style="border: 1px solid oklch(0.88 0.01 85); border-radius: 4px; overflow: hidden; background: oklch(0.99 0.004 85)">
+              <div style="aspect-ratio: 16 / 9; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260)"><span hidden="{{ esHidden }}">figura del proyecto</span><span hidden="{{ enHidden }}">project figure</span></span></div>
+              <div style="padding: 16px 18px 18px">
+                <h4 style="margin: 0 0 7px; font-size: 17px; font-weight: 600; line-height: 1.3"><span hidden="{{ esHidden }}">Tesis o proyecto largo</span><span hidden="{{ enHidden }}">Thesis or long project</span></h4>
+                <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: oklch(0.42 0.014 260); text-wrap: pretty"><span hidden="{{ esHidden }}">Resumen de una frase de tu tesis o de un proyecto de varios años.</span><span hidden="{{ enHidden }}">A one-sentence summary of your thesis or a multi-year project.</span></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px"><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">PDF</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 28px; border-top: 1px solid oklch(0.88 0.01 85)">
+        <div>
+          <h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 500; line-height: 1.25; text-wrap: pretty"><span hidden="{{ esHidden }}">Primeros trabajos y colaboraciones</span><span hidden="{{ enHidden }}">Early work and collaborations</span></h3>
+          <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.6; letter-spacing: 0.04em; color: oklch(0.52 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2018 — 2021</span><span hidden="{{ enHidden }}">University · 2018 — 2021</span></p>
+        </div>
+        <div>
+          <div hidden="{{ esHidden }}">
+            <p style="margin: 0 0 20px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Trabajos de máster, colaboraciones y temas que exploraste antes de especializarte.</p>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 62ch">
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Tema uno.</strong> Breve descripción y con quién lo hiciste. <a href="#">Referencia</a></span></li>
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Tema dos.</strong> Breve descripción y resultado principal. <a href="#">Referencia</a></span></li>
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Tema tres.</strong> Breve descripción y contexto. <a href="#">Referencia</a></span></li>
+            </ul>
+          </div>
+          <div hidden="{{ enHidden }}">
+            <p style="margin: 0 0 20px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Master's projects, collaborations, and topics you explored before specialising.</p>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 62ch">
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Topic one.</strong> Short description and who you did it with. <a href="#">Reference</a></span></li>
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Topic two.</strong> Short description and main result. <a href="#">Reference</a></span></li>
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Topic three.</strong> Short description and context. <a href="#">Reference</a></span></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="publicaciones" style="padding: 96px 0 0">
+    <div data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Publicaciones</span><span hidden="{{ enHidden }}">Publications</span></h2>
+      <div>
+        <div hidden="{{ esHidden }}"><p style="margin: 0 0 40px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Selección de artículos. La lista completa está en Google Scholar.</p></div>
+        <div hidden="{{ enHidden }}"><p style="margin: 0 0 40px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Selected papers. The complete list lives on Google Scholar.</p></div>
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+          <sc-for list="{{ publications }}" as="p" hint-placeholder-count="5">
+            <li style="display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 22px; padding: 20px 0; border-top: 1px solid oklch(0.9 0.008 85)">
+              <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; color: oklch(0.55 0.01 260); padding-top: 4px">{{ p.year }}</span>
+              <div>
+                <a href="#" style="font-size: 18px; line-height: 1.4; font-weight: 500; text-decoration: none; display: inline-block; margin-bottom: 6px">{{ p.title }}</a>
+                <p style="margin: 0 0 6px; font-size: 14px; line-height: 1.6; color: oklch(0.46 0.014 260)">{{ p.authors }}</p>
+                <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.03em; color: oklch(0.5 0.03 240)">{{ p.venue }}</p>
+              </div>
+            </li>
+          </sc-for>
+        </ol>
+        <div style="margin-top: 26px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px"><a href="#" style="text-decoration: none"><span hidden="{{ esHidden }}">Ver todo en Google Scholar →</span><span hidden="{{ enHidden }}">See everything on Google Scholar →</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notas" style="padding: 96px 0 0">
+    <div data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Notas</span><span hidden="{{ enHidden }}">Notes</span></h2>
+      <div>
+        <div hidden="{{ esHidden }}"><p style="margin: 0 0 36px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Cosas que pienso en voz alta: lecturas, ideas a medio cocinar y aprendizajes de la práctica.</p></div>
+        <div hidden="{{ enHidden }}"><p style="margin: 0 0 36px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Thinking out loud: readings, half-baked ideas, and lessons from practice.</p></div>
+        <div style="display: flex; flex-direction: column">
+          <a href="#" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 22px; padding: 22px 0; border-top: 1px solid oklch(0.9 0.008 85); text-decoration: none; color: inherit" style-hover="background: oklch(0.955 0.008 85)">
+            <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; color: oklch(0.55 0.01 260); padding-top: 4px">2026 · 04</span>
+            <div>
+              <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 500; line-height: 1.35"><span hidden="{{ esHidden }}">Título de la nota o entrada de blog</span><span hidden="{{ enHidden }}">Title of the note or blog post</span></h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.65; color: oklch(0.45 0.014 260); max-width: 60ch; text-wrap: pretty"><span hidden="{{ esHidden }}">Una frase de resumen para que se entienda de qué va antes de hacer clic.</span><span hidden="{{ enHidden }}">A one-line summary so readers know what it is before clicking.</span></p>
+            </div>
+          </a>
+          <a href="#" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 22px; padding: 22px 0; border-top: 1px solid oklch(0.9 0.008 85); text-decoration: none; color: inherit" style-hover="background: oklch(0.955 0.008 85)">
+            <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; color: oklch(0.55 0.01 260); padding-top: 4px">2026 · 02</span>
+            <div>
+              <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 500; line-height: 1.35"><span hidden="{{ esHidden }}">Qué aprendí preparando mi primera charla</span><span hidden="{{ enHidden }}">What I learned preparing my first talk</span></h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.65; color: oklch(0.45 0.014 260); max-width: 60ch; text-wrap: pretty"><span hidden="{{ esHidden }}">Notas prácticas, útiles para estudiantes que empiezan.</span><span hidden="{{ enHidden }}">Practical notes, useful for students starting out.</span></p>
+            </div>
+          </a>
+          <a href="#" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 22px; padding: 22px 0; border-top: 1px solid oklch(0.9 0.008 85); border-bottom: 1px solid oklch(0.9 0.008 85); text-decoration: none; color: inherit" style-hover="background: oklch(0.955 0.008 85)">
+            <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; color: oklch(0.55 0.01 260); padding-top: 4px">2025 · 11</span>
+            <div>
+              <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 500; line-height: 1.35"><span hidden="{{ esHidden }}">Herramientas que uso cada día</span><span hidden="{{ enHidden }}">Tools I use every day</span></h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.65; color: oklch(0.45 0.014 260); max-width: 60ch; text-wrap: pretty"><span hidden="{{ esHidden }}">Flujo de trabajo, scripts y hábitos de lectura.</span><span hidden="{{ enHidden }}">Workflow, scripts and reading habits.</span></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv" style="padding: 96px 0 0">
+    <div data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)">CV</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 44px 40px">
+        <div>
+          <h3 style="margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em"><span hidden="{{ esHidden }}">Formación</span><span hidden="{{ enHidden }}">Education</span></h3>
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Doctorado en tu disciplina</span><span hidden="{{ enHidden }}">PhD in your discipline</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2021 — 2025</span><span hidden="{{ enHidden }}">University · 2021 — 2025</span></p></div>
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Máster</span><span hidden="{{ enHidden }}">MSc</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2019 — 2021</span><span hidden="{{ enHidden }}">University · 2019 — 2021</span></p></div>
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Grado</span><span hidden="{{ enHidden }}">BSc</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2015 — 2019</span><span hidden="{{ enHidden }}">University · 2015 — 2019</span></p></div>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em"><span hidden="{{ esHidden }}">Experiencia</span><span hidden="{{ enHidden }}">Experience</span></h3>
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Investigador postdoctoral</span><span hidden="{{ enHidden }}">Postdoctoral researcher</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Instituto · 2025 —</span><span hidden="{{ enHidden }}">Institute · 2025 —</span></p></div>
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Estancia de investigación</span><span hidden="{{ enHidden }}">Research visit</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Centro / empresa · 2023</span><span hidden="{{ enHidden }}">Centre / company · 2023</span></p></div>
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Docencia y supervisión</span><span hidden="{{ enHidden }}">Teaching and supervision</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2021 — 2025</span><span hidden="{{ enHidden }}">University · 2021 — 2025</span></p></div>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em"><span hidden="{{ esHidden }}">Premios y becas</span><span hidden="{{ enHidden }}">Awards and grants</span></h3>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15.5px; line-height: 1.6; color: oklch(0.38 0.014 260)">
+            <li><span hidden="{{ esHidden }}">Beca predoctoral · 2021</span><span hidden="{{ enHidden }}">Doctoral fellowship · 2021</span></li>
+            <li><span hidden="{{ esHidden }}">Premio o mención · 2023</span><span hidden="{{ enHidden }}">Prize or mention · 2023</span></li>
+            <li><span hidden="{{ esHidden }}">Portada de revista · 2024</span><span hidden="{{ enHidden }}">Journal cover · 2024</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em"><span hidden="{{ esHidden }}">Charlas y divulgación</span><span hidden="{{ enHidden }}">Talks and outreach</span></h3>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15.5px; line-height: 1.6; color: oklch(0.38 0.014 260)">
+            <li><span hidden="{{ esHidden }}">Charla invitada · Congreso, 2026</span><span hidden="{{ enHidden }}">Invited talk · Conference, 2026</span></li>
+            <li><span hidden="{{ esHidden }}">Seminario · Instituto, 2025</span><span hidden="{{ enHidden }}">Seminar · Institute, 2025</span></li>
+            <li><span hidden="{{ esHidden }}">Taller para estudiantes · 2024</span><span hidden="{{ enHidden }}">Student workshop · 2024</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" data-reveal="1" style="margin-top: 104px; padding: 56px 0 0; border-top: 1px solid oklch(0.88 0.01 85); display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+    <h2 style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Contacto</span><span hidden="{{ enHidden }}">Contact</span></h2>
+    <div>
+      <div hidden="{{ esHidden }}"><p style="margin: 0 0 22px; font-size: 26px; line-height: 1.35; max-width: 40ch; text-wrap: pretty">¿Te interesa colaborar, o eres estudiante y quieres preguntarme algo? Escríbeme.</p></div>
+      <div hidden="{{ enHidden }}"><p style="margin: 0 0 22px; font-size: 26px; line-height: 1.35; max-width: 40ch; text-wrap: pretty">Interested in collaborating, or a student with a question? Get in touch.</p></div>
+      <p style="margin: 0 0 30px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; letter-spacing: 0.02em"><a href="mailto:tu@correo.edu">tu@correo.edu</a></p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px">
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap">Google Scholar</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap">GitHub</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap">LinkedIn</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap">ORCID</a>
+      </div>
+      <p style="margin: 48px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.04em; color: oklch(0.6 0.01 260)"><span hidden="{{ esHidden }}">© 2026 Tu Nombre Apellido · Última actualización: agosto 2026</span><span hidden="{{ enHidden }}">© 2026 Your Name · Last updated: August 2026</span></p>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;es&quot;,&quot;en&quot;],&quot;default&quot;:&quot;es&quot;,&quot;tsType&quot;:&quot;\&quot;es\&quot; | \&quot;en\&quot;&quot;,&quot;section&quot;:&quot;Idioma&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null };
+  rootRef = React.createRef();
+
+  componentDidMount() { this.setupReveal(); }
+  componentWillUnmount() { this.teardownReveal(); }
+
+  setupReveal() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const els = Array.from(root.querySelectorAll("[data-reveal]"));
+    els.forEach((el) => {
+      if (el.dataset.revealed === "1") return;
+      el.style.opacity = "0";
+      el.style.transform = "translateY(18px)";
+    });
+    const pass = () => {
+      const vh = window.innerHeight || 800;
+      let remaining = 0;
+      els.forEach((el) => {
+        if (el.dataset.revealed === "1") return;
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.92) {
+          el.dataset.revealed = "1";
+          el.style.transition = "opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1)";
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        } else remaining++;
+      });
+      if (!remaining) this.teardownReveal();
+    };
+    this._pass = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => { this._raf = 0; pass(); });
+    };
+    window.addEventListener("scroll", this._pass, { passive: true });
+    window.addEventListener("resize", this._pass, { passive: true });
+    pass();
+    this._t = setInterval(pass, 400);
+  }
+
+  teardownReveal() {
+    if (this._pass) {
+      window.removeEventListener("scroll", this._pass);
+      window.removeEventListener("resize", this._pass);
+    }
+    if (this._raf) cancelAnimationFrame(this._raf);
+    clearInterval(this._t);
+  }
+
+  renderVals() {
+    const es = (this.state.lang ?? this.props.lang ?? "es") === "es";
+    return {
+      rootRef: this.rootRef,
+      esHidden: !es,
+      enHidden: es,
+      langLabel: es ? "EN" : "ES",
+      toggleLang: () => this.setState({ lang: es ? "en" : "es" }),
+      publications: es
+        ? [
+            { year: "2026", title: "Título del artículo más reciente", authors: "T. Apellido, C. Colaboradora, D. Director", venue: "Congreso o revista 2026" },
+            { year: "2025", title: "Segundo artículo, con el método principal", authors: "T. Apellido, D. Director", venue: "Revista 12, 034501" },
+            { year: "2025", title: "Artículo en colaboración amplia", authors: "A. Autora, B. Autor, T. Apellido, y 14 más", venue: "Congreso 2025" },
+            { year: "2024", title: "Trabajo de la etapa anterior", authors: "T. Apellido, D. Director", venue: "Revista 8, 021002 (portada)" },
+            { year: "2023", title: "Tesis doctoral: título completo", authors: "T. Apellido", venue: "Tesis, Universidad" },
+            { year: "2021", title: "Primer artículo publicado", authors: "T. Apellido, C. Colaborador", venue: "Revista 103, 012345" }
+          ]
+        : [
+            { year: "2026", title: "Title of your most recent paper", authors: "Y. Surname, C. Collaborator, S. Supervisor", venue: "Conference or journal 2026" },
+            { year: "2025", title: "Second paper, with the main method", authors: "Y. Surname, S. Supervisor", venue: "Journal 12, 034501" },
+            { year: "2025", title: "Large-collaboration paper", authors: "A. Author, B. Author, Y. Surname, and 14 more", venue: "Conference 2025" },
+            { year: "2024", title: "Work from the previous stage", authors: "Y. Surname, S. Supervisor", venue: "Journal 8, 021002 (cover)" },
+            { year: "2023", title: "PhD thesis: full title", authors: "Y. Surname", venue: "Thesis, University" },
+            { year: "2021", title: "First published paper", authors: "Y. Surname, C. Collaborator", venue: "Journal 103, 012345" }
+          ]
+    };
+  }
+}
+</script>
+</body>
+</html>
