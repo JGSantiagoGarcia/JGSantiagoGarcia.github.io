@@ -1,1030 +1,353 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>José G. Santiago G.</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: Jul 27 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
-
 <body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: oklch(0.975 0.006 85); color: oklch(0.23 0.012 260); font-family: "Source Serif 4", Georgia, serif; -webkit-font-smoothing: antialiased; }
+  a { color: oklch(0.45 0.062 240); text-decoration-color: oklch(0.78 0.03 240); text-underline-offset: 3px; }
+  a:hover { color: oklch(0.34 0.075 240); }
+  ::selection { background: oklch(0.88 0.055 240); }
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="max-width: 1180px; margin: 0 auto; padding: 0 28px 120px">
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
-
-      <nav id="navbar" class="nav-menu navbar">
-        <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-        </ul>
-      </nav><!-- .nav-menu -->
+  <nav style="position: sticky; top: 0; z-index: 20; display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 20px 0 16px; background: oklch(0.975 0.006 85 / 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid oklch(0.88 0.01 85); flex-wrap: wrap">
+    <a href="#top" style="font-size: 17px; letter-spacing: 0.01em; text-decoration: none; color: oklch(0.23 0.012 260); font-weight: 600">Tu Nombre Apellido</a>
+    <div style="display: flex; align-items: baseline; gap: 22px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase">
+      <a href="#investigacion" style="text-decoration: none; white-space: nowrap"><span hidden="{{ esHidden }}">Investigación</span><span hidden="{{ enHidden }}">Research</span></a>
+      <a href="#publicaciones" style="text-decoration: none; white-space: nowrap"><span hidden="{{ esHidden }}">Publicaciones</span><span hidden="{{ enHidden }}">Publications</span></a>
+      <a href="#notas" style="text-decoration: none; white-space: nowrap"><span hidden="{{ esHidden }}">Notas</span><span hidden="{{ enHidden }}">Notes</span></a>
+      <a href="#cv" style="text-decoration: none; white-space: nowrap">CV</a>
+      <a href="#contacto" style="text-decoration: none; white-space: nowrap"><span hidden="{{ esHidden }}">Contacto</span><span hidden="{{ enHidden }}">Contact</span></a>
+      <button onClick="{{ toggleLang }}" style="font-family: inherit; font-size: 12px; letter-spacing: 0.06em; padding: 5px 10px; border: 1px solid oklch(0.8 0.02 240); border-radius: 999px; background: transparent; color: oklch(0.45 0.062 240); cursor: pointer">{{ langLabel }}</button>
     </div>
-  </header><!-- End Header -->
+  </nav>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-     <div class="container">
-  <div class="d-flex justify-content-center"><p>Hello, welcome to my page!</p></div>
-    
-    
-    <div class="hero-container" data-aos="fade-in">
-      <div class="d-flex justify-content-center">  <h1>José G. Santiago-García</h1></div>
-    </div> 
-    <div class="hero-container" data-aos="fade-in">
-  <div class="d-flex justify-content-center"> <p>jgsanti@ifuap.buap.mx</p></div>
-    </div>
-
-    <div class="hero-container" data-aos="fade-in">
-  <div class="d-flex justify-content-center"><p>Please, scroll down</p></div>
-    </div> 
-       </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="resume">
-              <div class="container">
-  <div class="section-title">
-           
-    <h3 class="resume-title">About</h3>
-          </div>
-        <p> I obtained my MSc (Physics) degree with academic distinction at the Instituto de Física, Benemérita 
-            Universidad Autónoma de Puebla (IFUAP), a research center located in Puebla, México, which has ranked 
-            first in physics at national level. Previously, I completed my BSc (Applied physics) studies at the
-            Universidad Tecnológica de la Mixteca, in Oaxaca, México. </p>
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/hk.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>MSc (Physics) - Degree obtained with academic distinction </h4>
-              <h5>2021 - 2023</h5>
-              <p><em>Benemérita Universidad Autónoma de Puebla, Puebla, MX</em></p>
-              <p>Thesis (in English): Spectral design of metamaterials with non-orthogonal orbitals</p>
-            </div>
-            <div class="resume-item">
-              <h4>BSc (Applied Physics)</h4>
-              <h5>2015 - 2020</h5>
-              <p><em>Universidad Tecnológica de la Mixteca, Oaxaca, MX</em></p>
-              <p>Thesis (in Spanish): Algebraic methods in the computation of crystalline propagators, with applications to photonic crystals</p>
-            </div>
-          </div>
-        </div>  
-        <p>With both my Bachelor's and Master's dissertations focusing on topics within the realm of 
-            mathematical physics, I'm confident to have a strong training in the theoretical description of quantum systems.</p>
-        </div>
-    </section><!-- End About Section -->
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container">
-          <h3 class="resume-title">Research experience</h3>  
-          <p> I knew I wanted to devote myself to learn about quantum mechanics since my early years as a bachelor's student. 
-        This have led me to perform several internships and develop personal projects which have allowed me to gain 
-        experience in a variety of topics such as experimental quantum optics, numerical solutions of Schrödinger's equation, 
-        propagation of waves in artificial crystals, quantum optimal control for superconducting qubits, and spectral design 
-        of compact materials by geometrical deformations. I have had the opportunity to work in diverse teams such as: the 
-        Quantum Optics Group at the Universidad Nacional Autónoma de México (UNAM), the New Physics in Accelerators and the
-        Cosmos group at IFUAP, and the Quantum Information and Thermodynamics (QuIT) group at Atominstitut, TU Wien.</p>
-        <div class="container">
-  <div class="row">
-    <div class="col-sm">
-       <div class="resume-item">
-              <h6>Intern, Prof. Marcus Huber's group</h6>
-              <h6>Supervisor: Dr. Phila Rembold</h6>
-              <h5>Summer 2023</h5>
-              <p><em>Atominstitut, TU Wien, Vienna, AT</em></p>
-              <img src="assets/img/tuw.png" class="img-fluid" alt="...">
-            </div>
-    </div>
-    <div class="col-sm">
-        <div class="resume-item">
-              <h6>MSc research project</h6>
-              <h6>(Mathematical physics)</h6>
-              <h6>Supervisor: Dr. E. Sadurní</h6>
-              <h5>2022 - 2023</h5>
-              <p><em>Instituto de Física, BUAP, Puebla, Mx</em></p>
-              <img src="assets/img/msct.png" class="img-fluid" alt=""> 
-            </div>    </div>
-    <div class="col-sm">
-      <div class="resume-item">
-              <h6>BSc research project</h6>
-              <h6>(Mathematical physics)</h6>
-              <h6>Supervisor: Dr. E. Sadurní</h6>
-              <h5>Summer 2019</h5>
-              <p><em>Instituto de Física, BUAP, Puebla, Mx</em></p>
-              <img src="assets/img/ifuap.png" class="img-fluid" alt=""> 
-            </div>
-    </div>
-    <div class="col-sm">
-      <div class="resume-item">
-              <h6>Undergraduate research project</h6>
-              <h5>Winter 2018</h5>
-              <p><em>Instituto de Física y Matemáticas, UTM, Oaxaca, Mx</em></p>
-              <img src="assets/img/utm.webp" class="img-fluid" alt="">
-            </div>
-    </div>
-    <div class="col-sm">
-      <div class="resume-item">
-              <h6>Internship</h6>
-              <h6>Supervisor: Dr. Víctor Manuel Velázquez Aguilar</h6>
-              <h5>Summer 2018</h5>
-              <p><em>Quantum Optics Group, UNAM, México, Mx</em></p>
-              <img src="assets/img/qo.jpg" class="img-fluid" alt="">
+  <header id="top" style="display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 56px; align-items: end; padding: 76px 0 64px; border-bottom: 1px solid oklch(0.88 0.01 85)">
+    <div data-reveal="1">
+      <p style="margin: 0 0 18px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Investigador · Universidad / Instituto</span><span hidden="{{ enHidden }}">Researcher · University / Institute</span></p>
+      <h1 style="margin: 0 0 22px; font-size: clamp(40px, 6.2vw, 66px); line-height: 1.02; font-weight: 400; letter-spacing: -0.02em; text-wrap: balance">Tu Nombre Apellido</h1>
+      <div hidden="{{ esHidden }}">
+        <p style="margin: 0 0 14px; font-size: 21px; line-height: 1.55; max-width: 52ch; color: oklch(0.32 0.014 260); text-wrap: pretty">Estudio <em>tu área de investigación</em> — cómo los sistemas complejos organizan información y qué podemos aprender de ellos con métodos computacionales.</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 54ch; color: oklch(0.44 0.014 260); text-wrap: pretty">Doctorando / Investigador en el grupo de <a href="#">Nombre del grupo</a>. Antes: institución previa y otra institución. Escribo aquí sobre lo que leo, aprendo y construyo.</p>
+      </div>
+      <div hidden="{{ enHidden }}">
+        <p style="margin: 0 0 14px; font-size: 21px; line-height: 1.55; max-width: 52ch; color: oklch(0.32 0.014 260); text-wrap: pretty">I study <em>your research area</em> — how complex systems organise information, and what computational methods can teach us about them.</p>
+        <p style="margin: 0; font-size: 17px; line-height: 1.7; max-width: 54ch; color: oklch(0.44 0.014 260); text-wrap: pretty">PhD candidate / Researcher in the <a href="#">Group name</a> group. Previously: former institution and another institution. I also write here about what I read, learn and build.</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 12px; margin-top: 30px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.03em">
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">Google Scholar</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">ORCID</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">GitHub</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">LinkedIn</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap; background: oklch(0.99 0.004 85)" style-hover="border-color: oklch(0.6 0.05 240); background: oklch(0.96 0.02 240)">CV (PDF)</a>
       </div>
     </div>
-  </div>
-          <p>You can find more details in my <a href="https://drive.google.com/file/d/1QEExSc8ODqqD6s6lg-dwJqwk9Vn5PCaI/view?usp=drive_link" target="_blank" class="link-info">CV</a>.</p>
+    <div data-reveal="1" style="display: flex; flex-direction: column; gap: 10px">
+      <div style="aspect-ratio: 4 / 5; border: 1px solid oklch(0.86 0.012 85); border-radius: 3px; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260); background: oklch(0.975 0.006 85); padding: 6px 9px"><span hidden="{{ esHidden }}">retrato / foto</span><span hidden="{{ enHidden }}">portrait / photo</span></span></div>
+      <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.55 0.01 260)"><span hidden="{{ esHidden }}">Arrastra aquí tu foto</span><span hidden="{{ enHidden }}">Drop your photo here</span></p>
+    </div>
+  </header>
+
+  <section id="investigacion" style="padding: 84px 0 0">
+    <div data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+      <h2 style="margin: 0; position: sticky; top: 84px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Investigación</span><span hidden="{{ enHidden }}">Research</span></h2>
+      <div>
+        <div hidden="{{ esHidden }}"><p style="margin: 0 0 8px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Tres líneas de trabajo, de lo que hago hoy a lo que me trajo hasta aquí.</p></div>
+        <div hidden="{{ enHidden }}"><p style="margin: 0 0 8px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Three lines of work, from what I do today back to what brought me here.</p></div>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 64px; margin-top: 56px">
+
+      <article data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 28px; border-top: 1px solid oklch(0.88 0.01 85)">
+        <div>
+          <h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 500; line-height: 1.25; text-wrap: pretty"><span hidden="{{ esHidden }}">Línea de investigación principal</span><span hidden="{{ enHidden }}">Main research line</span></h3>
+          <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.6; letter-spacing: 0.04em; color: oklch(0.52 0.01 260)"><span hidden="{{ esHidden }}">Instituto actual · 2024 —</span><span hidden="{{ enHidden }}">Current institute · 2024 —</span></p>
+        </div>
+        <div>
+          <div hidden="{{ esHidden }}"><p style="margin: 0 0 26px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Describe en dos frases el problema que te interesa, el método que usas y por qué importa. Evita jerga: que un estudiante de grado entienda de qué va.</p></div>
+          <div hidden="{{ enHidden }}"><p style="margin: 0 0 26px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Two sentences on the problem you care about, the method you use, and why it matters. Keep it jargon-free: an undergraduate should follow it.</p></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+            <div style="border: 1px solid oklch(0.88 0.01 85); border-radius: 4px; overflow: hidden; background: oklch(0.99 0.004 85)">
+              <div style="aspect-ratio: 16 / 9; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260)"><span hidden="{{ esHidden }}">figura del proyecto</span><span hidden="{{ enHidden }}">project figure</span></span></div>
+              <div style="padding: 16px 18px 18px">
+                <h4 style="margin: 0 0 7px; font-size: 17px; font-weight: 600; line-height: 1.3"><span hidden="{{ esHidden }}">Nombre del proyecto</span><span hidden="{{ enHidden }}">Project name</span></h4>
+                <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: oklch(0.42 0.014 260); text-wrap: pretty"><span hidden="{{ esHidden }}">Una o dos frases sobre qué construiste o descubriste y con qué resultado.</span><span hidden="{{ enHidden }}">One or two sentences on what you built or found, and the result.</span></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px"><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">arXiv</a><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px"><span hidden="{{ esHidden }}">Código</span><span hidden="{{ enHidden }}">Code</span></a><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px"><span hidden="{{ esHidden }}">Charla</span><span hidden="{{ enHidden }}">Talk</span></a></div>
+              </div>
+            </div>
+            <div style="border: 1px solid oklch(0.88 0.01 85); border-radius: 4px; overflow: hidden; background: oklch(0.99 0.004 85)">
+              <div style="aspect-ratio: 16 / 9; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260)"><span hidden="{{ esHidden }}">figura del proyecto</span><span hidden="{{ enHidden }}">project figure</span></span></div>
+              <div style="padding: 16px 18px 18px">
+                <h4 style="margin: 0 0 7px; font-size: 17px; font-weight: 600; line-height: 1.3"><span hidden="{{ esHidden }}">Segundo proyecto</span><span hidden="{{ enHidden }}">Second project</span></h4>
+                <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: oklch(0.42 0.014 260); text-wrap: pretty"><span hidden="{{ esHidden }}">Otra contribución de la misma línea: método, dataset, herramienta o resultado.</span><span hidden="{{ enHidden }}">Another contribution from the same line: a method, dataset, tool or result.</span></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px"><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">arXiv</a><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">DOI</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 28px; border-top: 1px solid oklch(0.88 0.01 85)">
+        <div>
+          <h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 500; line-height: 1.25; text-wrap: pretty"><span hidden="{{ esHidden }}">Segunda línea de trabajo</span><span hidden="{{ enHidden }}">Second line of work</span></h3>
+          <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.6; letter-spacing: 0.04em; color: oklch(0.52 0.01 260)"><span hidden="{{ esHidden }}">Institución previa · 2021 — 2024</span><span hidden="{{ enHidden }}">Previous institution · 2021 — 2024</span></p>
+        </div>
+        <div>
+          <div hidden="{{ esHidden }}"><p style="margin: 0 0 26px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Qué hiciste en esa etapa, con quién colaboraste y qué aprendiste que sigue presente en tu trabajo actual.</p></div>
+          <div hidden="{{ enHidden }}"><p style="margin: 0 0 26px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">What you did in that period, who you collaborated with, and what carried over into your current work.</p></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+            <div style="border: 1px solid oklch(0.88 0.01 85); border-radius: 4px; overflow: hidden; background: oklch(0.99 0.004 85)">
+              <div style="aspect-ratio: 16 / 9; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260)"><span hidden="{{ esHidden }}">figura del proyecto</span><span hidden="{{ enHidden }}">project figure</span></span></div>
+              <div style="padding: 16px 18px 18px">
+                <h4 style="margin: 0 0 7px; font-size: 17px; font-weight: 600; line-height: 1.3"><span hidden="{{ esHidden }}">Proyecto destacado</span><span hidden="{{ enHidden }}">Highlighted project</span></h4>
+                <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: oklch(0.42 0.014 260); text-wrap: pretty"><span hidden="{{ esHidden }}">Si un trabajo tuvo portada, premio o mención especial, dilo aquí en una línea.</span><span hidden="{{ enHidden }}">If a paper got a cover, prize or special mention, say it here in one line.</span></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px"><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px"><span hidden="{{ esHidden }}">Revista</span><span hidden="{{ enHidden }}">Journal</span></a><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">arXiv</a></div>
+              </div>
+            </div>
+            <div style="border: 1px solid oklch(0.88 0.01 85); border-radius: 4px; overflow: hidden; background: oklch(0.99 0.004 85)">
+              <div style="aspect-ratio: 16 / 9; background-image: repeating-linear-gradient(135deg, oklch(0.93 0.008 85) 0 6px, oklch(0.965 0.006 85) 6px 12px); display: flex; align-items: center; justify-content: center"><span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: 0.06em; color: oklch(0.5 0.01 260)"><span hidden="{{ esHidden }}">figura del proyecto</span><span hidden="{{ enHidden }}">project figure</span></span></div>
+              <div style="padding: 16px 18px 18px">
+                <h4 style="margin: 0 0 7px; font-size: 17px; font-weight: 600; line-height: 1.3"><span hidden="{{ esHidden }}">Tesis o proyecto largo</span><span hidden="{{ enHidden }}">Thesis or long project</span></h4>
+                <p style="margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: oklch(0.42 0.014 260); text-wrap: pretty"><span hidden="{{ esHidden }}">Resumen de una frase de tu tesis o de un proyecto de varios años.</span><span hidden="{{ enHidden }}">A one-sentence summary of your thesis or a multi-year project.</span></p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px"><a href="#" style="text-decoration: none; padding: 4px 8px; border: 1px solid oklch(0.88 0.02 240); border-radius: 3px">PDF</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start; padding-top: 28px; border-top: 1px solid oklch(0.88 0.01 85)">
+        <div>
+          <h3 style="margin: 0 0 6px; font-size: 22px; font-weight: 500; line-height: 1.25; text-wrap: pretty"><span hidden="{{ esHidden }}">Primeros trabajos y colaboraciones</span><span hidden="{{ enHidden }}">Early work and collaborations</span></h3>
+          <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.6; letter-spacing: 0.04em; color: oklch(0.52 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2018 — 2021</span><span hidden="{{ enHidden }}">University · 2018 — 2021</span></p>
+        </div>
+        <div>
+          <div hidden="{{ esHidden }}">
+            <p style="margin: 0 0 20px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Trabajos de máster, colaboraciones y temas que exploraste antes de especializarte.</p>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 62ch">
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Tema uno.</strong> Breve descripción y con quién lo hiciste. <a href="#">Referencia</a></span></li>
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Tema dos.</strong> Breve descripción y resultado principal. <a href="#">Referencia</a></span></li>
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Tema tres.</strong> Breve descripción y contexto. <a href="#">Referencia</a></span></li>
+            </ul>
+          </div>
+          <div hidden="{{ enHidden }}">
+            <p style="margin: 0 0 20px; font-size: 17px; line-height: 1.75; max-width: 62ch; color: oklch(0.36 0.014 260); text-wrap: pretty">Master's projects, collaborations, and topics you explored before specialising.</p>
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 62ch">
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Topic one.</strong> Short description and who you did it with. <a href="#">Reference</a></span></li>
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Topic two.</strong> Short description and main result. <a href="#">Reference</a></span></li>
+              <li style="display: grid; grid-template-columns: 14px 1fr; gap: 12px; font-size: 16px; line-height: 1.65; color: oklch(0.36 0.014 260)"><span style="color: oklch(0.65 0.06 240)">—</span><span><strong style="font-weight: 600">Topic three.</strong> Short description and context. <a href="#">Reference</a></span></li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="publicaciones" style="padding: 96px 0 0">
+    <div data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Publicaciones</span><span hidden="{{ enHidden }}">Publications</span></h2>
+      <div>
+        <div hidden="{{ esHidden }}"><p style="margin: 0 0 40px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Selección de artículos. La lista completa está en Google Scholar.</p></div>
+        <div hidden="{{ enHidden }}"><p style="margin: 0 0 40px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Selected papers. The complete list lives on Google Scholar.</p></div>
+        <ol style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column">
+          <sc-for list="{{ publications }}" as="p" hint-placeholder-count="5">
+            <li style="display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 22px; padding: 20px 0; border-top: 1px solid oklch(0.9 0.008 85)">
+              <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; color: oklch(0.55 0.01 260); padding-top: 4px">{{ p.year }}</span>
+              <div>
+                <a href="#" style="font-size: 18px; line-height: 1.4; font-weight: 500; text-decoration: none; display: inline-block; margin-bottom: 6px">{{ p.title }}</a>
+                <p style="margin: 0 0 6px; font-size: 14px; line-height: 1.6; color: oklch(0.46 0.014 260)">{{ p.authors }}</p>
+                <p style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.03em; color: oklch(0.5 0.03 240)">{{ p.venue }}</p>
+              </div>
+            </li>
+          </sc-for>
+        </ol>
+        <div style="margin-top: 26px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px"><a href="#" style="text-decoration: none"><span hidden="{{ esHidden }}">Ver todo en Google Scholar →</span><span hidden="{{ enHidden }}">See everything on Google Scholar →</span></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="notas" style="padding: 96px 0 0">
+    <div data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Notas</span><span hidden="{{ enHidden }}">Notes</span></h2>
+      <div>
+        <div hidden="{{ esHidden }}"><p style="margin: 0 0 36px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Cosas que pienso en voz alta: lecturas, ideas a medio cocinar y aprendizajes de la práctica.</p></div>
+        <div hidden="{{ enHidden }}"><p style="margin: 0 0 36px; font-size: 24px; line-height: 1.4; max-width: 46ch; text-wrap: pretty">Thinking out loud: readings, half-baked ideas, and lessons from practice.</p></div>
+        <div style="display: flex; flex-direction: column">
+          <a href="#" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 22px; padding: 22px 0; border-top: 1px solid oklch(0.9 0.008 85); text-decoration: none; color: inherit" style-hover="background: oklch(0.955 0.008 85)">
+            <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; color: oklch(0.55 0.01 260); padding-top: 4px">2026 · 04</span>
+            <div>
+              <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 500; line-height: 1.35"><span hidden="{{ esHidden }}">Título de la nota o entrada de blog</span><span hidden="{{ enHidden }}">Title of the note or blog post</span></h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.65; color: oklch(0.45 0.014 260); max-width: 60ch; text-wrap: pretty"><span hidden="{{ esHidden }}">Una frase de resumen para que se entienda de qué va antes de hacer clic.</span><span hidden="{{ enHidden }}">A one-line summary so readers know what it is before clicking.</span></p>
+            </div>
+          </a>
+          <a href="#" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 22px; padding: 22px 0; border-top: 1px solid oklch(0.9 0.008 85); text-decoration: none; color: inherit" style-hover="background: oklch(0.955 0.008 85)">
+            <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; color: oklch(0.55 0.01 260); padding-top: 4px">2026 · 02</span>
+            <div>
+              <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 500; line-height: 1.35"><span hidden="{{ esHidden }}">Qué aprendí preparando mi primera charla</span><span hidden="{{ enHidden }}">What I learned preparing my first talk</span></h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.65; color: oklch(0.45 0.014 260); max-width: 60ch; text-wrap: pretty"><span hidden="{{ esHidden }}">Notas prácticas, útiles para estudiantes que empiezan.</span><span hidden="{{ enHidden }}">Practical notes, useful for students starting out.</span></p>
+            </div>
+          </a>
+          <a href="#" style="display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 22px; padding: 22px 0; border-top: 1px solid oklch(0.9 0.008 85); border-bottom: 1px solid oklch(0.9 0.008 85); text-decoration: none; color: inherit" style-hover="background: oklch(0.955 0.008 85)">
+            <span style="font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11.5px; color: oklch(0.55 0.01 260); padding-top: 4px">2025 · 11</span>
+            <div>
+              <h3 style="margin: 0 0 6px; font-size: 19px; font-weight: 500; line-height: 1.35"><span hidden="{{ esHidden }}">Herramientas que uso cada día</span><span hidden="{{ enHidden }}">Tools I use every day</span></h3>
+              <p style="margin: 0; font-size: 15px; line-height: 1.65; color: oklch(0.45 0.014 260); max-width: 60ch; text-wrap: pretty"><span hidden="{{ esHidden }}">Flujo de trabajo, scripts y hábitos de lectura.</span><span hidden="{{ enHidden }}">Workflow, scripts and reading habits.</span></p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv" style="padding: 96px 0 0">
+    <div data-reveal="1" style="display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+      <h2 style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)">CV</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 44px 40px">
+        <div>
+          <h3 style="margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em"><span hidden="{{ esHidden }}">Formación</span><span hidden="{{ enHidden }}">Education</span></h3>
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Doctorado en tu disciplina</span><span hidden="{{ enHidden }}">PhD in your discipline</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2021 — 2025</span><span hidden="{{ enHidden }}">University · 2021 — 2025</span></p></div>
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Máster</span><span hidden="{{ enHidden }}">MSc</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2019 — 2021</span><span hidden="{{ enHidden }}">University · 2019 — 2021</span></p></div>
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Grado</span><span hidden="{{ enHidden }}">BSc</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2015 — 2019</span><span hidden="{{ enHidden }}">University · 2015 — 2019</span></p></div>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em"><span hidden="{{ esHidden }}">Experiencia</span><span hidden="{{ enHidden }}">Experience</span></h3>
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Investigador postdoctoral</span><span hidden="{{ enHidden }}">Postdoctoral researcher</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Instituto · 2025 —</span><span hidden="{{ enHidden }}">Institute · 2025 —</span></p></div>
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Estancia de investigación</span><span hidden="{{ enHidden }}">Research visit</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Centro / empresa · 2023</span><span hidden="{{ enHidden }}">Centre / company · 2023</span></p></div>
+            <div><p style="margin: 0; font-size: 16px; line-height: 1.5"><span hidden="{{ esHidden }}">Docencia y supervisión</span><span hidden="{{ enHidden }}">Teaching and supervision</span></p><p style="margin: 3px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; color: oklch(0.53 0.01 260)"><span hidden="{{ esHidden }}">Universidad · 2021 — 2025</span><span hidden="{{ enHidden }}">University · 2021 — 2025</span></p></div>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em"><span hidden="{{ esHidden }}">Premios y becas</span><span hidden="{{ enHidden }}">Awards and grants</span></h3>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15.5px; line-height: 1.6; color: oklch(0.38 0.014 260)">
+            <li><span hidden="{{ esHidden }}">Beca predoctoral · 2021</span><span hidden="{{ enHidden }}">Doctoral fellowship · 2021</span></li>
+            <li><span hidden="{{ esHidden }}">Premio o mención · 2023</span><span hidden="{{ enHidden }}">Prize or mention · 2023</span></li>
+            <li><span hidden="{{ esHidden }}">Portada de revista · 2024</span><span hidden="{{ enHidden }}">Journal cover · 2024</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: 0.01em"><span hidden="{{ esHidden }}">Charlas y divulgación</span><span hidden="{{ enHidden }}">Talks and outreach</span></h3>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 15.5px; line-height: 1.6; color: oklch(0.38 0.014 260)">
+            <li><span hidden="{{ esHidden }}">Charla invitada · Congreso, 2026</span><span hidden="{{ enHidden }}">Invited talk · Conference, 2026</span></li>
+            <li><span hidden="{{ esHidden }}">Seminario · Instituto, 2025</span><span hidden="{{ enHidden }}">Seminar · Institute, 2025</span></li>
+            <li><span hidden="{{ esHidden }}">Taller para estudiantes · 2024</span><span hidden="{{ enHidden }}">Student workshop · 2024</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" data-reveal="1" style="margin-top: 104px; padding: 56px 0 0; border-top: 1px solid oklch(0.88 0.01 85); display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 48px; align-items: start">
+    <h2 style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: oklch(0.52 0.03 240)"><span hidden="{{ esHidden }}">Contacto</span><span hidden="{{ enHidden }}">Contact</span></h2>
+    <div>
+      <div hidden="{{ esHidden }}"><p style="margin: 0 0 22px; font-size: 26px; line-height: 1.35; max-width: 40ch; text-wrap: pretty">¿Te interesa colaborar, o eres estudiante y quieres preguntarme algo? Escríbeme.</p></div>
+      <div hidden="{{ enHidden }}"><p style="margin: 0 0 22px; font-size: 26px; line-height: 1.35; max-width: 40ch; text-wrap: pretty">Interested in collaborating, or a student with a question? Get in touch.</p></div>
+      <p style="margin: 0 0 30px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 14px; letter-spacing: 0.02em"><a href="mailto:tu@correo.edu">tu@correo.edu</a></p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px 12px; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px">
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap">Google Scholar</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap">GitHub</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap">LinkedIn</a>
+        <a href="#" style="padding: 7px 13px; border: 1px solid oklch(0.86 0.012 85); border-radius: 4px; text-decoration: none; white-space: nowrap">ORCID</a>
+      </div>
+      <p style="margin: 48px 0 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.04em; color: oklch(0.6 0.01 260)"><span hidden="{{ esHidden }}">© 2026 Tu Nombre Apellido · Última actualización: agosto 2026</span><span hidden="{{ enHidden }}">© 2026 Your Name · Last updated: August 2026</span></p>
+    </div>
+  </section>
 </div>
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Research Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-        <div class="section-title">
-          <h3>Areas of knowledge</h3>
-        </div>
-<p>I have gained experience in the following areas during my research projects and internships: </p>
-          <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <ul>
-                <li class="fw-bold">Quantum optics: photon statistics</li>    
-                <li class="fw-bold">Numerical methods for quantum mechanics</li>
-                <li class="fw-bold">Crystalline propagators for 1D and 2D lattices</li>
-                <li class="fw-bold">Tight-binding models for artificial crystals</li>
-                <li class="fw-bold">Wannier functions from overlapping orbitals</li>
-                <li class="fw-bold">Inverse spectral design for potential well structures</li>
-            </ul>
-          </div>
-             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <ul>
-                <li class="fw-bold">Transmon qubits and their control</li>
-                <li class="fw-bold">Metal-insulator transition (MIT) in quasi-crystals with overlapping orbitals</li>
-                <li class="fw-bold">Anderson localization with non-orthogonal orbitals</li>
-                <li class="fw-bold">MIT from off-diagonal disorder</li>
-                <li class="fw-bold">Deformed Dirac oscillators</li>
-            </ul>
-          </div>
-            </div> 
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-qog">Quantum optics</li>
-              <li data-filter=".filter-fem">The finite element method for QM</li>
-              <li data-filter=".filter-pho">Photonic crystals</li>
-              <li data-filter=".filter-app">SU(2) propagator</li>
-              <li data-filter=".filter-card">SU(1,1) lattice</li>
-              <li data-filter=".filter-web">Heisenberg chain</li>
-              <li data-filter=".filter-app2">Crystalline propagators in 1D</li>
-              <li data-filter=".filter-web3">SO(4) crystal</li>
-              <li data-filter=".filter-web2">SU(3) lattice</li>
-              <li data-filter=".filter-web4">Spectral emulations</li>
-              <li data-filter=".filter-webb">Asymmetric bands with non-orthogonal orbitals</li>
-              <li data-filter=".filter-web5">Wannier functions</li>
-              <li data-filter=".filter-web6">Spectral rectification</li>
-              <li data-filter=".filter-web8">Equispaced spectrum</li>
-              <li data-filter=".filter-web7">Electronic oscillator</li>
-              <li data-filter=".filter-web9">Resonance spectra</li>
-              <li data-filter=".filter-web10">Tight-binding models</li>
-              <li data-filter=".filter-webqoc">Quantum optimal control</li>
-              <li data-filter=".filter-webmit">Aubry-André-Harper model</li>
-              <li data-filter=".filter-webal">Joint transmission for the Anderson tight-binding model</li>
-              <li data-filter=".filter-weboffmit">MIT for off-diagonal perturbations</li>
-              <li data-filter=".filter-ddo">f-deformed relativistic oscillators (in progress)</li>
-              <li data-filter=".filter-sqhe">Stability of the Quantum Hall effect (in progress) </li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-qog">
-            <div class="portfolio-wrap">
-              <img src="assets/img/exp.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/exp.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Experiment"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-qog">
-            <div class="portfolio-wrap">
-              <img src="assets/img/p5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/p5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Experiment"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-        <div class="col-lg-3 col-md-6 portfolio-item filter-fem">
-            <div class="portfolio-wrap">
-              <img src="assets/img/FEM/fem1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/FEM/fem1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Harmonic oscillator wavefunctions"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-fem">
-            <div class="portfolio-wrap">
-              <img src="assets/img/FEM/fem2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/FEM/fem2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Harmonic oscillator wavefunctions"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          
-        <div class="col-lg-3 col-md-6 portfolio-item filter-fem">
-            <div class="portfolio-wrap">
-              <img src="assets/img/FEM/fem5.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/FEM/fem5.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Harmonic oscillator wavefunctions"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          
-           <div class="col-lg-3 col-md-6 portfolio-item filter-fem">
-            <div class="portfolio-wrap">
-              <img src="assets/img/FEM/es3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/FEM/es3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Square well"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-fem">
-            <div class="portfolio-wrap">
-              <img src="assets/img/pl.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/pl.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Square well"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-pho">
-            <div class="portfolio-wrap">
-              <img src="assets/img/ph.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/ph.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-        <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU2/su2fm10.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU2/su2fm10.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(2) propagator"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU2/su2f15.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU2/su2f15.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(2) propagator"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU2/C1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU2/C1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(2) propagator"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU2/C2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU2/C2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(2) propagator"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU2/G1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU2/G1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(2) propagator"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU11/SU11c.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU11/SU11c.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU11/SU11d.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU11/SU11d.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU11/SU11BO10.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU11/SU11BO10.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU11/SU11BO3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU11/SU11BO3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU11/SU11BOa.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU11/SU11BOa.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU11/SU11BOb.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU11/SU11BOb.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-
-            <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/Heisenberg/H1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/Heisenberg/H1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(1,1)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/Heisenberg/H2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/Heisenberg/H2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(1,1)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/Heisenberg/HBO1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/Heisenberg/HBO1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(1,1)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/Heisenberg/HBO2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/Heisenberg/HBO2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(1,1)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app2">
-            <div class="portfolio-wrap">
-              <img src="assets/img/cp/props.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/cp/props.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(2) propagator"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-app2">
-            <div class="portfolio-wrap">
-              <img src="assets/img/cp/couplingsvsn.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/cp/couplingsvsn.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SU(2) propagator"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-           <div class="col-lg-3 col-md-6 portfolio-item filter-web3">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SO4/so(4).png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SO4/so(4).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-                 <div class="col-lg-3 col-md-6 portfolio-item filter-web3">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/SO(4) square lattice.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/SO(4) square lattice.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web2">
-            <div class="portfolio-wrap">
-              <img src="assets/img/SU3/su(3).png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/SU3/su(3).png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/dimer/asymm.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/dimer/asymm.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/dimer/asymm1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/dimer/asymm1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/dimer/asymm2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/dimer/asymm2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/dimer/asymm3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/dimer/asymm3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/experiment/discos.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/experiment/discos.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Courtesy of E. Sadurni."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/experiment/reflectionspectrum.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/experiment/reflectionspectrum.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Courtesy of U. Kuhl via E. Sadurni."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-            <div class="col-lg-3 col-md-6 portfolio-item filter-web4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/emulation/slab.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/emulation/slab.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/emulation/emulation.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/emulation/emulation.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-webb">
-            <div class="portfolio-wrap">
-              <img src="assets/img/bands/BandAsymmetry.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/bands/BandAsymmetry.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-webb">
-            <div class="portfolio-wrap">
-              <img src="assets/img/bands/Bands.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/bands/Bands.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-webb">
-            <div class="portfolio-wrap">
-              <img src="assets/img/bands/kp.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/bands/kp.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web5">
-            <div class="portfolio-wrap">
-              <img src="assets/img/WFs/WF1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/WFs/WF1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WFs (dark blue) for a dimer to first order in ϵ. (a) WFs for small potential well interdistance. In this regime, WFs differ notoriously from ground state wavefunctions (cyan) of isolated potential wells. The latter are represented by brown regions. (b) WFs for wells far apart. The more separated the wells are, the more WFs resemble isolated bound states."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-web5">
-            <div class="portfolio-wrap">
-              <img src="assets/img/WFs/WF2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/WFs/WF2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF (dark blue) for a periodic system to first order in ϵ and without modulation. The transform responsible for producing such function modifies the on-site non-orthogonal ket by adding to it neighboring states weighed by the small overlap, ϵ."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web5">
-            <div class="portfolio-wrap">
-              <img src="assets/img/WFs/WF3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/WFs/WF3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-web5">
-            <div class="portfolio-wrap">
-              <img src="assets/img/WFs/statio.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/WFs/statio.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="The correcting factor, 1/√1 + 2ϵ cos θ, is drawn in blue. This term, originated from normalizing a non-orthogonal basis, does not oscillates significantly. In orange, the constant function equal to 1 is shown. Thus, the term ei(qθ+f(θ)), appearing in the kernel of the Wannier transform, dominates the oscillations of the integrand. The value of ϵ is 0.05."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web5">
-            <div class="portfolio-wrap">
-              <img src="assets/img/WFs/WF4.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/WFs/WF4.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Resulting WFs from a stationary phase approximation. A quadratic phase in θ was used to ensure the existence of a non-trivial critical point for the phase Φ. Color code: Dark blue - squared modulus of WF, red/green - real/imaginary part of Wn(x). Probability distributions from non-orthogonal localized states are shown in cyan. The top panel has a lower value for α making the WF narrower than the bottom panel"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-web5">
-            <div class="portfolio-wrap">
-              <img src="assets/img/WFs/WF5.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/WFs/WF5.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Resulting WFs from a stationary phase approximation. A quadratic phase in θ was used to ensure the existence of a non-trivial critical point for the phase Φ. Color code: Dark blue - squared modulus of WF, red/green - real/imaginary part of Wn(x). Probability distributions from non-orthogonal localized states are shown in cyan. The top panel has a lower value for α making the WF narrower than the bottom panel"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-web5">
-            <div class="portfolio-wrap">
-              <img src="assets/img/WFs/WF6.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/WFs/WF6.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="|Wn(x)|2 (dark blue) obtained from a kernel with cosinusoidal phase with its real (imaginary) part shown in red (green). The number of non-orthogonal states that make up a WF is controlled by the α parameter."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-         <div class="col-lg-3 col-md-6 portfolio-item filter-web6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/focorrections/Vn.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/focorrections/Vn.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/focorrections/Comparison1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/focorrections/Comparison1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/fosiii.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/fosiii.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/focorrections/Comparison2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/focorrections/Comparison2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/histograms/H1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/histograms/H1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/histograms/H2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/histograms/H2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/histograms/H3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/histograms/H3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web6">
-            <div class="portfolio-wrap">
-              <img src="assets/img/histograms/H4.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/histograms/H4.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="SO(4)"><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-           <div class="col-lg-3 col-md-6 portfolio-item filter-web8">
-            <div class="portfolio-wrap">
-              <img src="assets/img/tsw/tsw wf 1p.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/tsw/tsw wf 1p.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Deformed triple square well potential. This structure supports nearly equidistant energy levels. The width of each well is L = 4 cells. The ground state is shown in blue. The separation between wells, from left to right, as measured from their centers, is given by d12 = 5, d23 = 5.5 cells."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-web8">
-            <div class="portfolio-wrap">
-              <img src="assets/img/tsw/tsw1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/tsw/tsw1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Energy levels for a deformed triple well potential. E = 0.2260, 0.2924, 0.3550, in units where V0 = 2[8ℏ2/mL2]. The level spacing for these levels results in 0.06639, 0.06262. The spectrum was verified by both meshing the spatial window that contains the system and by calculating the resonance spectrum. Transmission peaks coincide with the eigenvalues obtained from diagonalization."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-           <div class="col-lg-3 col-md-6 portfolio-item filter-web8">
-            <div class="portfolio-wrap">
-              <img src="assets/img/tsw/tsw2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/tsw/tsw2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Energy levels presented in a way so as to resemble a line with a constant slope."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web7">
-            <div class="portfolio-wrap">
-              <img src="assets/img/eClock/eClock.gif" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/eClock/eClock.gif" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web9">
-            <div class="portfolio-wrap">
-              <img src="assets/img/resonance/TvsE.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/resonance/TvsE.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web9">
-            <div class="portfolio-wrap">
-              <img src="assets/img/dilutevscompact/transitionseven4p8.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/dilutevscompact/transitionseven4p8.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web9">
-            <div class="portfolio-wrap">
-              <img src="assets/img/dilutevscompact/transitionseven6p0.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/dilutevscompact/transitionseven6p0.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web10">
-            <div class="portfolio-wrap">
-              <img src="assets/img/ch.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/ch.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-web10">
-            <div class="portfolio-wrap">
-              <img src="assets/img/couplinglaw/coupling.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/couplinglaw/coupling.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-webqoc">
-            <div class="portfolio-wrap">
-              <img src="assets/img/qoc.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/qoc.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="WF to second order in ϵ, i.e. with next-to-nearest neighbors contributions. It can be seen that this WF oscillates twice."><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-webmit">
-            <div class="portfolio-wrap">
-              <img src="assets/img/dilutewp.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/dilutewp.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Harper's transition for a dilute array"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-webmit">
-            <div class="portfolio-wrap">
-              <img src="assets/img/densewp.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/densewp.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Harper's transition for a dense array"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-webal">
-            <div class="portfolio-wrap">
-              <img src="assets/img/jointsemilogviii.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/jointsemilogviii.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Anderson localization with non-orthogonal orbitals"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-webal">
-            <div class="portfolio-wrap">
-              <img src="assets/img/tjointv.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/tjointv.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Decay rate"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-weboffmit">
-            <div class="portfolio-wrap">
-              <img src="assets/img/80semilogi.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/80semilogi.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MIT for off-diagonal perturbations"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-ddo">
-            <div class="portfolio-wrap">
-              <img src="assets/img/ddo1.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/ddo1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MIT for off-diagonal perturbations"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-ddo">
-            <div class="portfolio-wrap">
-              <img src="assets/img/ddo2.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/ddo2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MIT for off-diagonal perturbations"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-ddo">
-            <div class="portfolio-wrap">
-              <img src="assets/img/ddo3.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/ddo3.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MIT for off-diagonal perturbations"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-sqhe">
-            <div class="portfolio-wrap">
-              <img src="assets/img/80semilogi.png" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/80semilogi.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="MIT for off-diagonal perturbations"><i class="bx bx-plus"></i></a>
-              </div>
-            </div>
-          </div>
-          
-        
-    </section><!-- End Research Section -->
-
-    <section id="services" class="services">
-      <div class="container">
-        <div class="section-title">
-          <h3>Schools</h3>
-        </div>
-        <p>I have attended the following schools: </p>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-person"></i></div>
-            <h4 class="title"><a href="">School on Quantum Computing in Spanish - Qiskit Fall Fest 2023</a></h4>
-            <img src="assets/img/q.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-person"></i></div>
-            <h4 class="title"><a href="">VCQ summer school - Hybrid quantum devices</a></h4>
-            <img src="assets/img/t.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">VDSP summer academy “Matter Waves</a></h4>
-            <img src="assets/img/VDSP.jpg" class="img-fluid" alt="">
-          </div>
-          
-          <div class="col-lg-3 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-             <h4 class="title"><a href="">Advanced Summer School in Physics 2018</a></h4>
-            <img src="assets/img/EAV2018s.jpg" class="img-fluid" alt="">
-          </div>
-       
-    </section><!-- End Services Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>iPortfolio</span></strong>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;es&quot;,&quot;en&quot;],&quot;default&quot;:&quot;es&quot;,&quot;tsType&quot;:&quot;\&quot;es\&quot; | \&quot;en\&quot;&quot;,&quot;section&quot;:&quot;Idioma&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null };
+  rootRef = React.createRef();
+
+  componentDidMount() { this.setupReveal(); }
+  componentWillUnmount() { this.teardownReveal(); }
+
+  setupReveal() {
+    const root = this.rootRef.current;
+    if (!root) return;
+    const els = Array.from(root.querySelectorAll("[data-reveal]"));
+    els.forEach((el) => {
+      if (el.dataset.revealed === "1") return;
+      el.style.opacity = "0";
+      el.style.transform = "translateY(18px)";
+    });
+    const pass = () => {
+      const vh = window.innerHeight || 800;
+      let remaining = 0;
+      els.forEach((el) => {
+        if (el.dataset.revealed === "1") return;
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.92) {
+          el.dataset.revealed = "1";
+          el.style.transition = "opacity 700ms cubic-bezier(.2,.7,.2,1), transform 700ms cubic-bezier(.2,.7,.2,1)";
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        } else remaining++;
+      });
+      if (!remaining) this.teardownReveal();
+    };
+    this._pass = () => {
+      if (this._raf) return;
+      this._raf = requestAnimationFrame(() => { this._raf = 0; pass(); });
+    };
+    window.addEventListener("scroll", this._pass, { passive: true });
+    window.addEventListener("resize", this._pass, { passive: true });
+    pass();
+    this._t = setInterval(pass, 400);
+  }
+
+  teardownReveal() {
+    if (this._pass) {
+      window.removeEventListener("scroll", this._pass);
+      window.removeEventListener("resize", this._pass);
+    }
+    if (this._raf) cancelAnimationFrame(this._raf);
+    clearInterval(this._t);
+  }
+
+  renderVals() {
+    const es = (this.state.lang ?? this.props.lang ?? "es") === "es";
+    return {
+      rootRef: this.rootRef,
+      esHidden: !es,
+      enHidden: es,
+      langLabel: es ? "EN" : "ES",
+      toggleLang: () => this.setState({ lang: es ? "en" : "es" }),
+      publications: es
+        ? [
+            { year: "2026", title: "Título del artículo más reciente", authors: "T. Apellido, C. Colaboradora, D. Director", venue: "Congreso o revista 2026" },
+            { year: "2025", title: "Segundo artículo, con el método principal", authors: "T. Apellido, D. Director", venue: "Revista 12, 034501" },
+            { year: "2025", title: "Artículo en colaboración amplia", authors: "A. Autora, B. Autor, T. Apellido, y 14 más", venue: "Congreso 2025" },
+            { year: "2024", title: "Trabajo de la etapa anterior", authors: "T. Apellido, D. Director", venue: "Revista 8, 021002 (portada)" },
+            { year: "2023", title: "Tesis doctoral: título completo", authors: "T. Apellido", venue: "Tesis, Universidad" },
+            { year: "2021", title: "Primer artículo publicado", authors: "T. Apellido, C. Colaborador", venue: "Revista 103, 012345" }
+          ]
+        : [
+            { year: "2026", title: "Title of your most recent paper", authors: "Y. Surname, C. Collaborator, S. Supervisor", venue: "Conference or journal 2026" },
+            { year: "2025", title: "Second paper, with the main method", authors: "Y. Surname, S. Supervisor", venue: "Journal 12, 034501" },
+            { year: "2025", title: "Large-collaboration paper", authors: "A. Author, B. Author, Y. Surname, and 14 more", venue: "Conference 2025" },
+            { year: "2024", title: "Work from the previous stage", authors: "Y. Surname, S. Supervisor", venue: "Journal 8, 021002 (cover)" },
+            { year: "2023", title: "PhD thesis: full title", authors: "Y. Surname", venue: "Thesis, University" },
+            { year: "2021", title: "First published paper", authors: "Y. Surname, C. Collaborator", venue: "Journal 103, 012345" }
+          ]
+    };
+  }
+}
+</script>
 </body>
-
 </html>
